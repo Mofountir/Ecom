@@ -80,7 +80,7 @@ header nav h1 {
 }
 
 .presentation .product-presentation h1{
-    font-size: 4vh;
+    font-size: 4vw;
     margin: 0;
     width: 80%;
 }
@@ -124,11 +124,11 @@ header nav h1 {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+	gap: 20px;
 }
 .first .product-presentation .smallHeadset .headset {
 	padding: 20px;
 	background-color: #33314d;
-	margin: 0 15px 15px 0;
 	border-radius: 20px;
 	transition: filter 0.5s;
 }
@@ -182,22 +182,54 @@ footer p:hover {
 	.presentation {
 		display: flex;
 		flex-direction: column;
+		text-align: center;
 	}
 
 	.navList p {
 		display: none;
+		justify-content: center;
+
 	}
 
 	.presentation .product-presentation h1 {
 		font-size: 2em;
+		width: 100%;
 	}
 
+	.presentation .product-presentation .image-presentation {
+		display: none;
+		width: 100%;
+		height: auto;
+	}
+
+	.presentation .product-presentation .smallHeadset{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	
+	
+
+	.first .product-presentation .smallHeadset .headset{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 30px 0 30px 0;
+		width: 60px;
+		height: 60px;
+	}
 	.first .product-presentation .smallHeadset .headset img {
-		width: 90px;
+		display: flex;
+		width: 80px;
+		height: 80px;
+		
+
 	}
 
 	footer {
-		justify-content: flex-start;
+		justify-content: center;
+		text-align: center;
 	}
 	footer .column {
 		width: 80%;
