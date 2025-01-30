@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="signin-signup">
+      <!-- Header du form -->
+      <div class="header">
+        <button id="btnConnexion" class="active-tab">Se connecter</button>
+        <button id="btnInscription">Inscription</button>
+      </div>
+      <!-- Form de Sign In -->
+      <form action="" id="sign-in-form" class="active-form">
+        <h3 class="title">Connexion</h3>
+        <div class="input-field">
+          <i></i>
+          <input type="text" placeholder="Entrer votre email" />
+        </div>
+        <div class="input-field">
+          <i></i>
+          <input type="password" placeholder="Entrer votre mot de passe" />
+        </div>
+        <input type="submit" value="Connexion" class="btn solid" />
+      </form>
+
+      <!-- Form d'inscription -->
+      <form action="" id="sign-up-form" class="hidden">
+        <h3 class="title">Inscription</h3>
+        <div class="input-field">
+          <i></i>
+          <input type="text" placeholder="Entrer votre nom" />
+        </div>
+        <div class="input-field">
+          <i></i>
+          <input type="text" placeholder="Entrer votre email" />
+        </div>
+        <div class="input-field">
+          <i></i>
+          <input type="password" placeholder="Entrer votre mot de passe" />
+        </div>
+        <input type="submit" value="Inscription" class="btn solid" />
+      </form>
+    </div>
+
+    <script src="test.js"></script>
+  </body>
+</html>
