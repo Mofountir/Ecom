@@ -1,8 +1,6 @@
 // switch entre connection et inscription
 const sign_in_btn = document.querySelector("#btnConnexion");
 const sign_up_btn = document.querySelector("#btnInscription");
-console.log(sign_in_btn);
-console.log(sign_up_btn);
 
 // quand je suis sur la page de connexion et que je clique sur inscription, je suis redirigé vers la page d'inscription
 sign_up_btn.addEventListener("click", () => {
@@ -26,8 +24,8 @@ sign_up_btn.addEventListener("click", () => {
 sign_in_btn.addEventListener("click", () => {
   sign_in_btn.classList.add(".active-tab");
   sign_up_btn.classList.remove(".active-tab");
-  
-  // changer le form    
+
+  // changer le form
   const sign_in_form = document.querySelector("#sign-in-form");
   const sign_up_form = document.querySelector("#sign-up-form");
   sign_in_form.classList.remove("hidden");
@@ -41,5 +39,34 @@ sign_in_btn.addEventListener("click", () => {
   sign_in_btn.style.color = "var(--violet)";
   sign_up_btn.style.color = "#fff";
 });
+
+
+
+// Inscription
+//recuperer les valeurs des champs
+const nom = document.querySelector("#nom").value;
+const email = document.querySelector("#email_ins").value;
+const password = document.querySelector("#password_ins").value;
+
+//recuperer les messages d'erreur
+const nomMessage = document.querySelector("#nom_message");
+const emailMessage = document.querySelector("#email_ins_message");
+const passwordMessage = document.querySelector("#password_ins_message");
+
+// verifier si les champs sont remplis
+if (!nom) {
+    nomMessage.textContent = "Veuillez remplir tous les champs";
+    nomMessage.style.color = "red";
+    nomMessage.style.fontSize = "12px";
+}
+if (!email) {
+    emailMessage.textContent = "Veuillez remplir tous les champs";
+    emailMessage.style.color = "red";
+    emailMessage.style.fontSize = "12px";
+}
+
+
+
+
 
 
