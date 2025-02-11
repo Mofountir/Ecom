@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+:root {
+	--violet: #d33bfd;
+}
+
+
+.active{
+    border-bottom: 2px solid violet;
+    padding: 0.7rem
+
+}
+
+.presentation{
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.presentation .product-presentation{
+    width: 100%;
+    flex-shrink: 3;
+}
+
+.presentation .product-presentation h1{
+    font-size: 4vw;
+    margin: 0;
+    width: 80%;
+}
+
+.presentation .product-presentation p{
+    font-weight: 300;
+    color: #e9e9e9;
+}
+
+.presentation .product-presentation button{
+    padding: 15px 20px;
+    font-size: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;   
+    outline: none;
+    cursor: pointer;   
+}
+
+.presentation .product-presentation button:hover{
+    background-color: inherit;
+    color: var(--violet);
+}
+
+.presentation .image-presentation img {
+	width: 100%;
+}
+
+.first .product-presentation button {
+	background-color: var(--violet);
+	color: white;
+	border: 1px solid var(--violet);
+	transition: background-color 0.5s, color 0.5s;
+}
+.first .product-presentation button:hover {
+	background-color: inherit;
+	color: var(--violet);
+}
+.first .product-presentation .smallHeadset {
+	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 20px;
+}
+.first .product-presentation .smallHeadset .headset {
+	padding: 20px;
+	background-color: #33314d;
+	border-radius: 20px;
+	transition: filter 0.5s;
+}
+.first .product-presentation .smallHeadset .headset:hover {
+	filter: brightness(50%);
+}
+.first .product-presentation .smallHeadset .headset img {
+	width: 120px;
+}
+
+
+.second {
+	margin: 0;
+	background-color: #13181d;
+}
+.second .product-presentation .new {
+	color: var(--violet);
+}
+.second .product-presentation button {
+	background-color: inherit;
+	border: 1px solid var(--violet);
+	color: var(--violet);
+	transition: background-color 0.5s, color 0.5s;
+}
+.second .product-presentation button:hover {
+	background-color: var(--violet);
+	color: white;
+}
+
+footer {
+	margin: 0;
+	padding: 20px;
+	background-color: black;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+footer h3 {
+	color: var(--violet);
+}
+footer p {
+	cursor: pointer;
+	color: #ccc;
+}
+footer p:hover {
+	color: white;
+}
+
+@media screen and (max-width: 450px) {
+	
+	.presentation {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.navList p {
+		display: none;
+		justify-content: center;
+
+	}
+
+	.presentation .product-presentation h1 {
+		font-size: 2em;
+		width: 100%;
+	}
+
+	.presentation .product-presentation .image-presentation {
+		display: none;
+		width: 100%;
+		height: auto;
+	}
+
+	.presentation .product-presentation .smallHeadset{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	
+	
+
+	.first .product-presentation .smallHeadset .headset{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 30px 0 30px 0;
+		width: 60px;
+		height: 60px;
+	}
+	.first .product-presentation .smallHeadset .headset img {
+		display: flex;
+		width: 80px;
+		height: 80px;
+		
+
+	}
+
+	footer {
+		justify-content: center;
+		text-align: center;
+	}
+	footer .column {
+		width: 80%;
+	}
+}
+
+

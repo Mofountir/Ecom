@@ -9,20 +9,6 @@
   --success-color: #00C851;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(#13181d, #20212e, #341b47);
-}
 
 .signin-signup {
   position: relative;
