@@ -1,18 +1,19 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
   --violet: #d33bfd;
   --violet-hover: #e054ff;
   --bg-transparent: rgba(255, 255, 255, 0.1);
   --border-transparent: rgba(255, 255, 255, 0.2);
+  --error-color: #ff4444;
+  --success-color: #00C851;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -23,7 +24,6 @@ body {
   background: linear-gradient(#13181d, #20212e, #341b47);
 }
 
-/* Form Container */
 .signin-signup {
   position: relative;
   width: 100%;
@@ -35,7 +35,6 @@ body {
   backdrop-filter: blur(10px);
 }
 
-/* Header Styles */
 .header {
   display: flex;
   justify-content: space-around;
@@ -62,7 +61,6 @@ body {
   border-bottom: 2px solid var(--violet);
 }
 
-/* Form Elements */
 .title {
   font-size: 24px;
   color: #fff;
@@ -70,30 +68,108 @@ body {
   text-align: center;
 }
 
-input {
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
   width: 100%;
   padding: 15px;
+  padding-right: 40px;
   background: var(--bg-transparent);
   border: 1px solid var(--border-transparent);
   border-radius: 10px;
   color: #fff;
   font-size: 16px;
-  margin-bottom: 20px;
   transition: all 0.3s ease;
 }
 
-input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-input:focus {
+.input-group input:focus {
   background: rgba(255, 255, 255, 0.15);
   border-color: var(--violet);
   outline: none;
   box-shadow: 0 0 10px rgba(211, 59, 253, 0.3);
 }
 
-/* Button Styles */
+.input-group .toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.input-group .toggle-password:hover {
+  opacity: 1;
+}
+
+.input-group .validation-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.input-group.valid .validation-icon::before {
+  content: '✓';
+  color: var(--success-color);
+}
+
+.input-group.error .validation-icon::before {
+  content: '✕';
+  color: var(--error-color);
+}
+
+.input-group.valid .validation-icon,
+.input-group.error .validation-icon {
+  opacity: 1;
+}
+
+.error-text {
+  display: block;
+  color: var(--error-color);
+  font-size: 12px;
+  margin-top: 5px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.input-group.error .error-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.message-container {
+  margin-bottom: 20px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+  animation: slideDown 0.3s ease;
+}
+
+.message.error {
+  background: rgba(255, 68, 68, 0.1);
+  border: 1px solid var(--error-color);
+  color: var(--error-color);
+}
+
+.message.success {
+  background: rgba(0, 200, 81, 0.1);
+  border: 1px solid var(--success-color);
+  color: var(--success-color);
+}
+
 .btn {
   width: 100%;
   padding: 15px;
@@ -105,7 +181,8 @@ input:focus {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:hover {
@@ -114,7 +191,27 @@ input:focus {
   box-shadow: 0 5px 15px rgba(211, 59, 253, 0.4);
 }
 
-/* Form States */
+.btn .spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.btn.loading .btn-text {
+  opacity: 0;
+}
+
+.btn.loading .spinner {
+  opacity: 1;
+}
+
 .hidden {
   display: none;
 }
@@ -135,7 +232,23 @@ input:focus {
   }
 }
 
-/* Responsive Design */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 @media screen and (max-width: 480px) {
   .signin-signup {
     padding: 20px;

@@ -1,52 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>test</title>
+    <title>Authentification</title>
     <link rel="stylesheet" href="auth.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
     <div class="signin-signup">
-      <!-- Header du form -->
       <div class="header">
-        <button id="btnConnexion" class="active-tab">connexion</button>
-        <button id="btnInscription" class="">Inscription</button>
+        <button id="btnConnexion" class="active-tab">Connexion</button>
+        <button id="btnInscription">Inscription</button>
       </div>
-      <!-- Form de Sign In -->
-      <form action="" id="sign-in-form" class="active-form">
+
+      <div class="message-container">
+        <div id="error-msg" class="message error hidden"></div>
+        <div id="success-msg" class="message success hidden"></div>
+      </div>
+
+      <form id="sign-in-form" class="active-form">
         <h3 class="title">Connexion</h3>
-        <input id="email_cnx" type="text" placeholder="Entrer votre email" />
-        <p id="email_cnx_message"></p>
-        <input id="password_cnx" type="password" placeholder="Entrer votre mot de passe"/>
-        <p id="password_cnx_message"></p>
-        <button type="submit" value="Connexion" class="btn solid">Connexion</button>
+        <div class="input-group">
+          <input
+            id="email_cnx"
+            type="email"
+            placeholder="Entrer votre email"
+            required
+          />
+          <i class="validation-icon"></i>
+          <small class="error-text"></small>
+        </div>
+        <div class="input-group">
+          <input
+            id="password_cnx"
+            type="password"
+            placeholder="Entrer votre mot de passe"
+            required
+          />
+          <i class="toggle-password fas fa-eye"></i>
+          <i class="validation-icon"></i>
+          <small class="error-text"></small>
+        </div>
+        <button type="submit" class="btn solid">
+          <span class="btn-text">Connexion</span>
+          <span class="spinner hidden"></span>
+        </button>
       </form>
 
-
-      <!-- Form d'inscription -->
-      <form action="" id="sign-up-form" class="hidden">
+      <form id="sign-up-form" class="hidden">
         <h3 class="title">Inscription</h3>
-        <input id="nom" type="text" placeholder="Entrer votre nom"/>
-        <p id="nom_message"></p>
-        <input id="email_ins" type="text" placeholder="Entrer votre email"/>
-        <p id="email_ins_message"></p>
-        <input id="password_ins" type="password" placeholder="Confirmer votre mot de passe"/>
-        <p id="password_ins_message"></p>
-        <button type="submit" value="Inscription" class="btn solid">Inscription</button>
+        <div class="input-group">
+          <input id="nom" type="text" placeholder="Entrer votre nom" required />
+          <i class="validation-icon"></i>
+          <small class="error-text"></small>
+        </div>
+        <div class="input-group">
+          <input
+            id="email_ins"
+            type="email"
+            placeholder="Entrer votre email"
+            required
+          />
+          <i class="validation-icon"></i>
+          <small class="error-text"></small>
+        </div>
+        <div class="input-group">
+          <input
+            id="password_ins"
+            type="password"
+            placeholder="Entrer un mot de passe"
+            required
+          />
+          <i class="toggle-password fas fa-eye"></i>
+          <i class="validation-icon"></i>
+          <small class="error-text"></small>
+        </div>
+        <button type="submit" class="btn solid">
+          <span class="btn-text">Inscription</span>
+          <span class="spinner hidden"></span>
+        </button>
       </form>
-
-
-
-
-
-
-
-
-
     </div>
-
-
-    <script src="./test.js"></script>
+    <script src="test.js"></script>
   </body>
 </html>
